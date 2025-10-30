@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Korea University 2025</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <div id="fileUpload" style="text-align:center; margin-bottom:20px;">
+        <input type="file" id="lookFile" accept="image/*" multiple>
+        <button onclick="loadLookImages()">Load Images</button>
+    </div>
+
+
+    <div id="mainMenu">
+        <h1>Korea University 2025</h1>
+        <table>
+            <tr><td onclick="showSection('lookAround')">Look Around</td></tr>
+            <tr><td onclick="showSection('memorabilia')">Memorabilia</td></tr>
+            <tr><td onclick="showSection('search')">Search</td></tr>
+            <tr><td onclick="showSection('postComment')">Post Comment</td></tr>
+            <tr><td onclick="showSection('update')">Update</td></tr>
+        </table>
+    </div>
+
+    <!-- look around -->
+    <div id="lookAround" style="display:none;">
+        <h1>Look Around</h1>
+        <div id="lookGallery" style="text-align:center; margin-top:20px;">
+            <img id="currentImage" src="" style="max-width:80%; max-height:400px; display:none; border:2px solid #ccc; border-radius:5px;">
+            <br><br>
+            <button id="prevBtn" onclick="prevImage()" style="display:none;">Previous</button>
+            <button id="nextBtn" onclick="nextImage()" style="display:none;">Next</button>
+        </div>
+        <br>
+        <button onclick="showSection('mainMenu')">Home</button>
+    </div>
+
+    <!-- memorabilia -->
+    <div id="memorabilia" style="display:none;">
+        <h1>Memorabilia</h1>
+        <div id="memGallery" style="text-align:center; margin-top:20px;"></div>
+        <br>
+        <button onclick="showSection('mainMenu')">Home</button>
+    </div>
+
+    <!-- search -->
+    <div id="search" style="display:none;">
+        <h1>Korea University 2025</h1>
+        <form>
+            <label for="who">Who:</label><br>
+            <input type="text" id="who" name="who"><br><br>
+
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+        <br>
+        <button onclick="showSection('mainMenu')">Home</button>
+    </div>
+
+    <!--  comment section -->
+    <div id="postComment" style="display:none;">
+        <h1>Post Comment</h1>
+        <form id="commentForm">
+            <textarea id="commentInput" rows="4" cols="50" placeholder="Enter your comment here..." style="padding:8px;"></textarea><br><br>
+            <input type="submit" value="Submit">
+        </form>
+        <br>
+        <h3>Comments:</h3>
+        <ul id="commentList"></ul>
+        <br>
+        <button onclick="showSection('mainMenu')">Home</button>
+    </div>
+
+    <!-- update Section -->
+    <div id="update" style="display:none;">
+        <h1>Update</h1>
+        <div id="updateStep1">
+            <form id="updateForm1">
+                <label for="typeSelect">What do you want to update?</label><br><br>
+                <select id="typeSelect" required>
+                    <option value="classmate">Classmate</option>
+                    <option value="teacher">Teacher</option>
+                </select><br><br>
+                <input type="submit" value="Next">
+                <button type="button" onclick="showSection('mainMenu')">Home</button>
+            </form>
+        </div>
+        <div id="updateStep2" style="display:none;">
+            <form id="updateForm2">
+                <label for="firstName">First Name:</label><br>
+                <input type="text" id="firstName" name="firstName"><br><br>
+
+                <label for="lastName">Last Name:</label><br>
+                <input type="text" id="lastName" name="lastName"><br><br>
+
+                <label for="address">Address:</label><br>
+                <input type="text" id="address" name="address"><br><br>
+
+                <input type="submit" value="Update">
+                <button type="button" onclick="cancelUpdate()">Back</button>
+            </form>
+            <br>
+            <button onclick="showSection('mainMenu')">Home</button>
+        </div>
+    </div>
+
+    <!-- JS File -->
+    <script src="script.js"></script>
+</body>
+</html>
