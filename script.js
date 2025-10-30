@@ -11,7 +11,7 @@ function showSection(sectionId) {
     document.getElementById('updateStep2').style.display = 'none';
 }
 
-// Post comment
+//  comment
 document.getElementById('commentForm').addEventListener('submit', function(e){
     e.preventDefault();
     const commentText = document.getElementById('commentInput').value.trim();
@@ -32,7 +32,7 @@ function displayComments(){
     });
 }
 
-// Update logic
+// update
 document.getElementById('updateForm1').addEventListener('submit', function(e){
     e.preventDefault();
     const selected = document.getElementById('typeSelect').value;
@@ -56,7 +56,6 @@ function cancelUpdate(){
     document.getElementById('address').value = '';
 }
 
-// Look Around Images
 function loadLookImages() {
     const files = document.getElementById('lookFile').files;
     if(files.length === 0){
